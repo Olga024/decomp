@@ -5,7 +5,9 @@ interface ICurrencyProps {
     rate: number,
     change: number
 }
-
+/** 
+* Показывает наименование валюты, курс и изменение курса.
+*/
 const ExchangeLink: React.FC<ICurrencyProps> = ({ currencyName, rate, change }) => {
     return (
         <div>

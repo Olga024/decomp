@@ -11,7 +11,9 @@ interface ILink {
 type Props = {
     links: ILink[];
 };
-
+/**
+ * Ссылка на новость с иконкой.
+*/
 const NewsLink: React.FC<Props> = ({ links }) => {
     return (
         <Navbar style={{

@@ -9,7 +9,9 @@ interface InfoCard {
 interface IProps {
     cardsData: InfoCard[],
 }
-
+/**
+ * Карточка с информацией, включающая заголовок-ссылку и контент.
+ */
 const InfoCard = ({ cardsData }: IProps) => (
     <Row xs={1} md={3} className="no-gutters">
         {cardsData.map((card, index) => (

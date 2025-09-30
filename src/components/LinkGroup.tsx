@@ -9,7 +9,9 @@ interface ILink {
 type Props = {
     links: ILink[];
 };
-
+/** 
+* Отображает группу ссылок в строку.
+*/
 const LinkGroup: React.FC<Props> = ({ links }) => (
     <Navbar fixed="top" style={{
         position: 'fixed',

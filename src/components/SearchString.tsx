@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 interface YandexSearchBarProps {
     onSearch: (query: string) => void;
 }
-
+/**
+* Ссылки, логотип, поле ввода строки поиска с обработчиком события поиска и кнопка.
+*/
 const YandexSearchBar: React.FC<YandexSearchBarProps> = ({ onSearch }) => {
     const [query, setQuery] = React.useState('');
 
