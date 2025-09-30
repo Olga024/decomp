@@ -12,8 +12,8 @@ const ExchangeLink: React.FC<ICurrencyProps> = ({ currencyName, rate, change }) 
     return (
         <div>
             <Card style={{
-                position: 'fixed',
-                top: '200px',
+                //position: 'fixed',
+                //top: '200px',
                 width: '100%',
                 borderColor: 'white',
                 backgroundColor: 'white'
