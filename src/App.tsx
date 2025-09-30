@@ -1,33 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ExchangeLink from './components/ExchangeLink';
+import InfoCard from './components/InfoCard';
+import LinkGroup from './components/LinkGroup'
+import MovieLink from './components/MovieLink';
+import NewsLink from './components/NewsLink'
+import SearchString from './components/SearchString';
+
+interface TLink {
+  icon?: string;
+  href: string,
+  label: string,
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const links1: TLink[] = [
+    { href: '/', label: 'Сейчас в СМИ' },
+    { href: '/about', label: 'в Германии' },
+    { href: '/contact', label: 'Рекомендуем' }
+  ]
+
+  const links2: TLink[] = [
+    { href: '/', label: 'Lorem Ipsum is simply' },
+    { href: '/', label: 'Lorem Ipsum is simply' },
+    { href: '/', label: 'Lorem Ipsum is simply' },
+  ]
+
+  const infoCardsData: InfoCard[] = [
+    {
+      title: 'Lorem Ipsum is simply',
+      content: 'It is a long established fact',
+      link: undefined
+    },
+    {
+      title: 'Lorem Ipsum is simply',
+      content: 'It is a long established fact',
+      link: undefined
+    },
+    {
+      title: 'Lorem Ipsum is simply',
+      content: 'It is a long established fact',
+      link: undefined
+    },
+    {
+      title: 'Lorem Ipsum is simply',
+      content: 'It is a long established fact',
+      link: undefined
+    },
+    {
+      title: 'Lorem Ipsum is simply',
+      content: 'It is a long established fact',
+      link: undefined
+    },
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <LinkGroup links={links1} />
+      <NewsLink links={links2} />
+      <ExchangeLink currencyName={'currency'} rate={10} change={10} />
+      <SearchString onSearch={function (): void {
+        throw new Error('Function not implemented.');
+      }} />
+      <MovieLink />
+      <InfoCard cardsData={infoCardsData} />
     </>
   )
 }
